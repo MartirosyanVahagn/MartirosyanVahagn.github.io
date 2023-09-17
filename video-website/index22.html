@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+	<link rel="stylesheet" href="style-index22/style.css">
+	<!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<title>Search Image</title>
+</head>
+<body>
+	<section>
+  <div
+  id="drop_zone"
+  ondrop="dropHandler(event);"
+  ondragover="dragOverHandler(event);">
+  <p><i class='bx bxs-file-png' id="i"></i><br>Մոտեցրեք ֆայլը կցելու համար
+<i> այստեղ</i>.</p>
+</div>
+</section>
+	<script src="js-index22/script.js">
+     function dropHandler(ev) {
+  console.log("File(s) dropped");
+
+  // Prevent default behavior (Prevent file from being opened)
+  ev.preventDefault();
+
+  if (ev.dataTransfer.items) {
+    // Use DataTransferItemList interface to access the file(s)
+    [...ev.dataTransfer.items].forEach((item, i) => {
+      // If dropped items aren't files, reject them
+      if (item.kind === "file") {
+        const file = item.getAsFile();
+        console.log(`… file[${i}].name = ${file.name}`);
+      }
+    });
+  } else {
+    // Use DataTransfer interface to access the file(s)
+    [...ev.dataTransfer.files].forEach((file, i) => {
+      console.log(`… file[${i}].name = ${file.name}`);
+    });
+  }
+}   
+    </script>
+</body>
+</html>

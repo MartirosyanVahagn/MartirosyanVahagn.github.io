@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Logo -->
+    <link rel="shortcut icon" href="img/pixabay-logo-png-transparent.png" type="image/x-icon">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Pixabay</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+button{
+    cursor: pointer;
+}
+
+.banner{
+    min-height: 100vh;
+
+}
+/*.banner{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+/*    justify-content: space-between;*/
+/*}*/
+.container{
+     padding: 0 32px;
+     max-width: 1850px;
+     width: 100%;
+}
+.container2{
+     padding: 0 32px;
+     max-width: 1850px;
+     width: 100%;
+/*     border: 1px solid red;*/
+     height: 90px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 0 32px;
+}
+.logo{
+    width: 122px;
+    cursor: pointer;
+}
+.logo2{
+    display: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.search-box i{
+    font-size: 20px;
+}
+.search-box{
+    position: relative;
+}
+/*.container{
+    border: 1px solid blue;
+}*/
+/*.banner{
+    border: 1px solid black;
+    
+}*/
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.search-box{
+    max-width: 900px;
+    border-radius: 40px;
+    height: 40px;
+    width: 100%;
+    background-color: #f7f7f7;
+    border: 1px solid #f7f7f7;
+    position: relative;
+    margin: 0 20px;
+}
+.search-box i,
+.search-box .but2{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+}
+.search-box input{
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    height: 100%;  
+    padding: 0 155px 0 35px;
+    color: #656f79;
+    background-color: #f7f7f7;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 17px;
+    text-align: start;
+
+}
+.search-box i{
+    left: 15px;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+.search-box i:active{
+    color: greenyellow;
+}
+
+.search-box .but2{
+    right: 20px;
+    font-weight: 600;
+    color: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: none;
+    border: none;
+    background: transparent;
+    color: #191b26;
+}
+.buttons{
+    display: flex;
+/*    flex-flow: row nowrap;*/
+    /*display: flex;
+    align-items: center;
+    justify-content: space-between;*/
+}
+.buttons .but3{
+    font-weight: 600;
+    color: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: none;
+    border: none;
+    background: transparent;
+    color: #191b26;
+    padding: 0 16px;
+    white-space: nowrap;
+}
+.but3 a{
+    font-weight: 600;
+    color: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: none;
+    border: none;
+    background: transparent;
+    color: #191b26;
+    padding: 0 16px;
+    white-space: nowrap;
+    text-decoration: none;
+}
+.buttons .but3:hover{
+    background: transparent;
+    background-color: #f7f7f7;
+    border-radius: 24px;
+    height: 50px;
+}
+.buttons2 .but3{
+    font-weight: 600;
+    color: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: none;
+    border: none;
+    background: transparent;
+    color: #191b26;
+    padding: 0 16px;
+    white-space: nowrap;
+
+}
+.buttons2 .but3 a{
+    text-decoration: none;
+    color: #191b26;
+}
+.buttons2 .but3:hover{
+    background: transparent;
+    background-color: #f7f7f7;
+    border-radius: 24px;
+    height: 60px;
+}
+
+.but4{
+    max-width: 150px;
+    height: 50px;
+    width: 100%;
+    border: 1px solid #ceced2;
+    background: transparent;
+    border-radius: 24px;
+    margin-left: 8px;
+    padding: 14px 20px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.but-relevant{
+    max-width: 150px;
+    height: 50px;
+    width: 100%;
+    border: 1px solid #ceced2;
+    background: transparent;
+    border-radius: 24px;
+    margin-left: 8px;
+    padding: 14px 20px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.but-relevant a{
+    color: black;
+    text-decoration: none;
+}
+.but4:hover{
+    border: 1px solid black;
+    transition: 0.5s;
+}
+.but-relevant:hover{
+    border: 1px solid black;
+    transition: 0.5s;
+}
+.buttons .but5{
+    font-weight: 600;
+    max-width: 500px;
+    height: 50px;
+    width: 100%;
+    border: 1px solid #ceced2;
+    background: transparent;
+    border-radius: 24px;
+    color: white;
+    background: #00ab6b;
+    border: none;
+    white-space: nowrap;
+    padding: 0 24px;
+    margin-left: 32px;
+}
+.buttons .but5 a{
+    text-decoration: none;
+    color: white;
+}
+.buttons .but5:hover{
+    background: #14bc7d;
+    color: #fff;
+}
+.labBut{
+    display: flex
+}
+.lab{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    color: #656f79;
+}
+.lab button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.lab button i{
+  font-size: 40px;
+  cursor: pointer;   
+}
+.icon-question i{
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 7px;
+}
+h1{
+    font-size: 32px;
+    font-weight: 800;
+    margin-top: 40px;
+}
+.promo{
+    color: #00ab6b;
+    font-weight: 600;
+}
+b{
+    font-weight: bolder;
+}
+.promo-text a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #656f79;
+    font-weight: 400;
+}
+.promo-text a:hover{
+    border-bottom: 1px solid black;
+    color: black;
+}
+.video-container span{
+    font-size: 14px;
+    color: #656f79;
+    font-weight: 400;
+}
+.data{
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0 32px;
+}
+.data .buttons4{
+    margin-top: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.buttons4 button{
+    border: 1px solid #ceced2;
+    background: transparent;
+    border-radius: 6px;
+    padding: 5px 10px;
+    color: #191b26;
+}
+.buttons4 button,a{
+    color: #191b26;
+    text-decoration: none;
+}
+.buttons4 button:hover{
+    border: 1px solid black;
+    transition: 1s;
+}
+.buttons4 .for-margin{
+    margin-left: 10px;
+}
+.video1{
+    max-width: 350px;
+    width: 100%;
+}
+.video2{
+    max-width: 350px;
+    width: 100%;
+    margin-left: 26px;
+}
+.video3{
+    max-width: 350px;
+    width: 100%;
+    margin-left: 26px;
+}
+.video4{
+    position: relative;
+    max-width: 350px;
+    width: 100%;
+    margin-left: 26px;
+}
+.video4 i{
+    font-size: 14px;
+}
+.video5{
+    max-width: 500px;
+    width: 100%;
+    margin-left: 26px;
+}
+.video6{
+    max-width: 500px;
+    width: 100%;
+    margin-left: 26px;
+}
+.video7{
+    max-width: 500px;
+    width: 100%;
+    margin-left: 26px;
+}
+.video8{
+    max-width: 500px;
+    width: 100%;
+    margin-left: 26px;
+}
+.video9{
+    max-width: 500px;
+    width: 100%;
+    margin-left: 26px;
+}
+.video10{
+    max-width: 500px;
+    width: 100%;
+    margin-left: 26px;
+}
+.video11{
+    max-width: 500px;
+    width: 100%;
+    margin-left: 26px;
+}
+.video12{
+    max-width: 500px;
+    width: 100%;
+    margin-left: 26px;
+}
+.video13{
+    max-width: 500px;
+    width: 100%;
+    margin-left: 26px;
+}
+.video14{
+    max-width: 500px;
+    width: 100%;
+    margin-left: 26px;
+}
+.video15{
+    max-width: 500px;
+    width: 100%;
+    margin-left: 26px;
+}
+.video16{
+    max-width: 500px;
+    width: 100%;
+    margin-left: 26px;
+}
+.a1{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+}
+.a2{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+}
+.a3{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+}
+.a4{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+    
+}
+.a5{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+}
+.a6{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+}
+.a7{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+}
+.a8{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+}
+.a9{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+}
+.a10{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+}
+.a11{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+}
+.a12{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+}
+.a13{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+}
+.a14{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+}
+.a15{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+}
+.a16{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+}
+.img-video1{
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.img-video2{
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.img-video3{
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.img-video4{
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.img-video5{
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.img-video6{
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.img-video7{
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.img-video8{
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.img-video9{
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.img-video10{
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.img-video11{
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.img-video12{
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.img-video13{
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.img-video14{
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.img-video15{
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.img-video16{
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+/*.video-container{
+    
+}*/
+.div-icon1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video-block{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    max-width: 100%;
+    width: 100%;
+    align-items: flex-start;
+}
+.video-container{
+    padding: 0 32px;
+    margin: 24px 0;
+}
+.istock-link{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    background: rgba(25,27,38,.4);
+    text-align: center;
+    padding: 8px;
+    text-decoration: none;
+}
+.istock-link:hover{
+    text-decoration-line: underline;
+}
+.filters{
+    max-width: 500px;
+    width: 100%;
+    /*border-radius: 24px;
+    height: 40px;
+    padding: 0 16px;
+    box-sizing: border-box;*/
+    background: transparent;
+    color: #656f79;
+    border: none;
+    font-size: 19px;
+    display: none;
+}
+.free-videos-text{
+    font-weight: 400;
+    font-size: 14px;
+    color: #656f79;
+    margin-top: 16px;
+    padding: 0 32px;
+}
+.free-videos{
+    max-width: 1920px;
+    max-height: 1080px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    width: 100%;
+    align-items: flex-start;
+    padding: 0 22px 20px 0;
+}
+.free-videos2{
+    max-width: 1920px;
+    max-height: 1080px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+    align-items: flex-start;
+    padding: 0 22px 20px 0;
+}
+.free-videos3{
+    max-width: 1920px;
+    max-height: 1080px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+    align-items: flex-start;
+    padding: 0 22px 20px 0;
+}
+.free-videos4{
+    max-width: 1920px;
+    max-height: 1080px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+    align-items: flex-start;
+    padding: 0 22px 0 0;
+}
+@media only screen and (max-width: 653px) {
+ .logo{
+        display: none;
+    }
+    .logo2{
+    display: block;
+    
+        
+    }
+    body button, input {
+    font-size: 14px;
+}
+
+}
+@media only screen and (max-width: 1138px) {
+ .buttons .but5{
+        display: none;
+    }
+}
+
+.but5 i{
+    font-weight: 600;
+     color: white;
+}
+/*@media only screen and (max-width: 887px) {
+ .search-box .but2{
+      display: none;
+ }
+
+}*/
+.but5 i{
+    font-size: 18px;
+}
+@media only screen and (max-width: 878px){
+    #but10{
+        display: none;
+    }
+}
+@media only screen and (max-width: 780px){
+    #but9{
+        display: none;
+    }
+}
+@media only screen and (max-width: 703px){
+    #but8{
+        display: none;
+    }
+}
+@media only screen and (max-width: 607px){
+    #but7{
+        display: none;
+    }
+}
+@media only screen and (max-width: 541px){
+    #but6{
+        display: none;
+    }
+}
+@media only screen and (max-width: 1000px){
+    .labBut .lab{
+        display: none;
+    }
+    .buttons2 .but3{
+        display: none;
+    }
+    .filters{
+        display: block;
+
+    }
+    .filters:hover{    
+        background: transparent;
+        background-color: #f7f7f7;
+        border-radius: 24px;
+        height: 50px;
+    }
+    .buttons2 a{
+        text-decoration: none;
+    }
+    .container2{
+        justify-content: space-around;
+    }
+    
+}
+@media only screen and (max-width: 971px){
+    .video3{
+        display: none;
+    }
+}
+@media only screen and (max-width: 436px){
+    #but5{
+        display: none;
+    }
+}
+@media only screen and (max-width: 349px){
+    #but4{
+        display: none;
+    }
+}
+@media only screen and (max-width: 370px){
+    .but4{
+        display: none;
+    }
+}
+@media only screen and (max-width: 297px){
+    .buttons .but3{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 265px){
+    #but3{
+        display: none;
+    }
+}
+@media only screen and (max-width: 215px){
+    #but2{
+        display: none;
+    }
+}
+@media only screen and (max-width: 217px){
+    .but-relevant{
+        display: none;
+    }
+}
+@media only screen and (max-width: 210px){
+    h1{
+        font-size: 20px;
+    }
+    .sponser-title span{
+        font-size: 10px;
+    }
+    .sponser-title a{
+        font-size: 10px;
+    }
+    .free-videos-text{
+        font-size: 10px;
+    }
+    .buttons4 button{
+        padding: 1px 1px;
+    }
+}
+@media only screen and (max-width: 248px){
+    .istock-link{
+        display: none;
+    }
+}
+@media only screen and (max-width: 719px){
+    .search-box input{
+        font-size: 16px;
+        padding: 0 1px 0 35px;
+    }
+}
+@media only screen and (max-width: 677px){
+    .search-box .but2{
+        display: none;
+    }
+    .search-box{
+        padding: 0 47px 0 0;
+    }
+
+}
+@media only screen and (max-width: 515px){
+    .search-box input{
+        padding: 0 15px 0 35px;
+    }
+}
+
+@media only screen and (max-width: 764px){
+    .search-box{
+        padding: 0 68px 0 0;
+    }
+
+
+}
+@media only screen and (max-width: 532px){
+    .search-box{
+        display: none;
+    }
+}
+    </style>
+</head>
+<body>
+    <section class="banner">
+        <div class="container">
+            <div class="nav-bar">
+                 <a href="index.html"><img src="img/logo.png" alt="logo" class="logo"></a>
+                 <a href="index.html"><img src="img/Pixabay-logo-new.svg.png" alt="logo" class="logo2"></a>
+                 <div class="search-box">
+                    <form action="https://pixabay.com/ru/">
+                        <button class="but1"><i class='bx bx-search'></i></button>
+                        <input type="text" placeholder="Search" class="search">
+                        <button class="but2" href="https://pixabay.com/ru/videos/">Videos</button>
+                    </form>
+                 </div>
+                 <div class="buttons">
+                     <button class="but3"><a href="https://pixabay.com/ru/popular-searches/">Explore</a></button>
+                     <button class="but3">Log in</button>
+                     <a href="https://pixabay.com/ru/videos/search/website/"><button class="but4">Join</button></a>
+                     
+                     <button class="but5">
+                        <a href="https://pixabay.com/ru/videos/search/website/">
+                        <i class='bx bx-upload'></i>
+                        <span>Upload</span>
+                        </a>
+                     </button>
+                 
+                 </div>
+            </div>
+        </div>
+        <hr>    
+        <div class="container2">
+            <div class="buttons2">
+                <button class="but3"><a href="https://pixabay.com/ru/videos/search/website/">Videos</a></button>
+                <button class="but3"><a href="https://pixabay.com/ru/videos/search/website/">Orientation</a></button>
+                <button class="but3"><a href="https://pixabay.com/ru/videos/search/website/">Effects</a></button>
+                <button class="but3"><a href="https://pixabay.com/ru/videos/search/website/">Resolution</a></button>
+                <button class="but3"><a href="https://pixabay.com/ru/videos/search/website/">Published date</a></button>
+                <a href="https://pixabay.com/ru/videos/search/website/"><button class="filters">
+                    <i class='bx bx-filter'></i>
+                    Filters
+                </button></a>
+            </div>
+            <div class="labBut">
+                <label class="lab">
+                    <button type="button" class="s" onclick="func()"><i class='bx bx-toggle-right'></i></button>
+                    <span>Safe Search</span>
+                    <div class="icon-question">
+                        <i class='bx bx-question-mark'></i>
+                    </div>
+                </label>
+                <div class="button3">
+                    <button class="but-relevant"><a href="https://pixabay.com/ru/videos/search/website/">Most relevant</a></button>
+                </div>
+            </div>
+
+        </div>
+        <hr>    
+        <div class="data">
+            <h1>75 Free Videos Website</h1>
+            <div class="buttons4">
+                <button>Web site</button>
+                <button class="for-margin" id="but2"><a href="https://pixabay.com/ru/videos/search/%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d0%bd%d0%b5%d1%82%20%d1%81%d0%b0%d0%b9%d1%82/">Internet</a></button>
+                <button class="for-margin" id="but3"><a href="https://pixabay.com/ru/videos/search/%d1%81%d0%b5%d1%82%d1%8c/">net</a></button>
+                <button class="for-margin" id="but4"><a href="https://pixabay.com/ru/videos/search/%d0%b4%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd">design</a></button>
+                <button class="for-margin" id="but5"><a href="https://pixabay.com/ru/videos/search/%d1%81%d0%b8%d0%bc%d0%b2%d0%be%d0%bb/">symbol</a></button>
+                <button class="for-margin" id="but6"><a href="https://pixabay.com/ru/videos/search/%d0%ba%d0%be%d0%bc%d0%bf%d1%8c%d1%8e%d1%82%d0%b5%d1%80/">computer</a></button>
+                <button class="for-margin" id="but7"><a href="https://pixabay.com/ru/videos/search/%d0%b8%d0%ba%d0%be%d0%bd%d0%b0/">icon</a></button>
+                <button class="for-margin" id="but8"><a href="https://pixabay.com/ru/videos/search/%d1%82%d0%b5%d1%85%d0%bd%d0%be%d0%bb%d0%be%d0%b3%d0%b8%d1%8f/">technology</a></button>
+                <button class="for-margin" id="but9"><a href="https://pixabay.com/ru/videos/search/%d0%be%d0%bd%d0%bb%d0%b0%d0%b9%d0%bd/">online</a></button>
+                <button class="for-margin" id="but10"><a href="https://pixabay.com/ru/videos/search/%d0%b1%d0%b8%d0%b7%d0%bd%d0%b5%d1%81">business</a></button>
+            </div>
+            
+        </div>
+        <div class="video-container">
+            <div class="sponser-title">
+            <span>iStock Sponsored Videos</span>
+            <span class="promo-text"><a href="https://www.istockphoto.com/stock-videos" target="_blank"> LIMITED DEAL: 20% off with <b class="promo">PIXABAY20</b> coupon</a></span>
+            </div>
+            <div class="video-block">
+            <div class="video1">
+                
+                <a class="a1" href="video-website/index.html" target="_blank">
+                    <img class="img-video1" src="img/istockphoto-1344233712-640x640.jpg" alt="video-img">
+                </a>
+            </div>
+                <div class="video2">
+                    <a class="a2" href="video-website/index2.html" target="_blank">
+                    <img class="img-video2" src="img/istockphoto-1405993999-640x640.jpg" alt="video-img">
+                </a>
+                <div class="div-icon1">
+                    <!-- <i></i> -->
+                </div>
+                </div>
+                <div class="video3">
+                    <a class="a3" href="video-website/index3.html" target="_blank">
+                    <img class="img-video3" src="img/video3-640x640.jpg" alt="video-img">
+                </a>
+                </div>
+                <div class="video4">
+                    <img class="img-video3" src="img/1262557133-4e5f6c5089b14e40a34f1ab6334308cfda586671de6ee57ad_640x360.jpg" alt="video-img">
+                    <a class="a4" href="video-website/index4.html" target="_blank">
+                    <a class="istock-link" href="video-website/index4.html" target="_blank">
+                        See more on iStock
+                        <i class='bx bx-link-external'></i>
+                    </a>
+                </a>
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="free-videos-text">
+                    <font style="vertical-align: inherit;">Free videos</font>
+            </div>
+           <div class="free-videos">
+               <div class="video5">
+                    <a class="a5" href="pixabay-videos-watch/index.html" target="_blank">
+                    <img class="img-video5" src="img/608344355-c1521a7f07e24d0cd128655bf80a3b591fd7188d0f95d1d76e004c3545e4704f-d_640x360.jpg" alt="video-img">
+                </a>
+                </div>
+                <div class="video6">
+                    <a class="a6" href="pixabay-videos-watch/videos/index.html" target="_blank">
+                    <img class="img-video6" src="img/639347434-8b26d0d592e58196ae82f770c37033eb693b5884de1a43745f2b72aedfc1c3fc-d_640x458.jpg" alt="video-img">
+                </a>
+                </div>
+                <div class="video7">
+                    <a class="a7" href="pixabay-videos-watch/videos/index2.html" target="_blank">
+                    <img class="img-video7" src="img/free-video-3252145.webp" alt="video-img">
+                </a>
+                </div>
+           </div>
+           <div class="free-videos2">
+               <div class="video8">
+                    <a class="a8" href="pixabay-videos-watch/videos/index3.html" target="_blank">
+                    <img class="img-video8" src="img/pexels-photo-4828605.jpeg" alt="video-img">
+                </a>
+                </div>
+                <div class="video9">
+                    <a class="a9" href="pixabay-videos-watch/videos/index4.html" target="_blank">
+                    <img class="img-video9" src="img/asia-covid-19-crisis-hotspots-4888376.webp" alt="video-img">
+                </a>
+                </div>
+                <div class="video10">
+                    <a class="a10" href="pixabay-videos-watch/videos/index5.html" target="_blank">
+                    <img class="img-video10" src="img/pexels-photo-7308103.jpeg" alt="video-img">
+                </a>
+                </div>
+                </div>
+                <div class="free-videos3">
+                <div class="video11">
+                    <a class="a11" href="pixabay-videos-watch/videos/index6.html" target="_blank">
+                    <img class="img-video11" src="img/babysitter-babysitting-computer-internet-6986417.webp" alt="video-img">
+                </a>
+                </div>
+                <div class="video12">
+                    <a class="a12" href="pixabay-videos-watch/videos/index7.html" target="_blank">
+                    <img class="img-video12" src="img/2022-app-download-apple-ipad-download-app-11062245.webp" alt="video-img">
+                </a>
+                </div>
+                <div class="video13">
+                    <a class="a13" href="pixabay-videos-watch/videos/index8.html" target="_blank">
+                    <img class="img-video13" src="img/adult-appoint-business-communication-7989836.jpeg" alt="video-img">
+                </a>
+                </div>
+                </div>
+                <div class="free-videos4">
+                <div class="video14">
+                    <a class="a14" href="pixabay-videos-watch/videos/index9.html" target="_blank">
+                    <img class="img-video14" src="img/istockphoto-452646105-640x640.jpg" alt="video-img">
+                </a>
+                </div>
+                <div class="video15">
+                    <a class="a15" href="pixabay-videos-watch/videos/index10.html" target="_blank">
+                    <img class="img-video15" src="img/istockphoto-1291909312-640x640.jpg" alt="video-img">
+                </a>
+                </div>
+                <div class="video16">
+                    <a class="a16" href="pixabay-videos-watch/videos/index11.html" target="_blank">
+                    <img class="img-video16" src="img/istockphoto-1181486378-640x640.jpg" alt="video-img">
+                </a>
+
+                </div>
+           </div>
+    </section>
+</body>
+</html>

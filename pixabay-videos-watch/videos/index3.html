@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Logo -->
+    <link rel="shortcut icon" href="img-index/pixabay-logo-png-transparent.png" type="image/x-icon">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Pixabay</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+button{
+    cursor: pointer;
+}
+
+.banner{
+    min-height: 100vh;
+
+}
+/*.banner{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+/*    justify-content: space-between;*/
+/*}*/
+.container{
+     padding: 0 32px;
+     max-width: 1850px;
+     width: 100%;
+}
+.container2{
+     padding: 0 32px;
+     max-width: 1850px;
+     width: 100%;
+/*     border: 1px solid red;*/
+     height: 90px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 0 32px;
+}
+.logo{
+    width: 122px;
+    cursor: pointer;
+}
+.logo2{
+    display: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.search-box i{
+    font-size: 20px;
+}
+.search-box{
+    position: relative;
+}
+/*.container{
+    border: 1px solid blue;
+}*/
+/*.banner{
+    border: 1px solid black;
+    
+}*/
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.search-box{
+    max-width: 900px;
+    border-radius: 40px;
+    height: 40px;
+    width: 100%;
+    background-color: #f7f7f7;
+    border: 1px solid #f7f7f7;
+    position: relative;
+    margin: 0 20px;
+}
+.search-box i,
+.search-box .but2{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+}
+.search-box input{
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    height: 100%;  
+    padding: 0 155px 0 35px;
+    color: #656f79;
+    background-color: #f7f7f7;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 17px;
+    text-align: start;
+
+}
+.search-box i{
+    left: 15px;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+.search-box i:active{
+    color: greenyellow;
+}
+
+.search-box .but2{
+    right: 20px;
+    font-weight: 600;
+    color: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: none;
+    border: none;
+    background: transparent;
+    color: #191b26;
+}
+.buttons{
+    display: flex;
+/*    flex-flow: row nowrap;*/
+    /*display: flex;
+    align-items: center;
+    justify-content: space-between;*/
+}
+.buttons .but3{
+    font-weight: 600;
+    color: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: none;
+    border: none;
+    background: transparent;
+    color: #191b26;
+    padding: 0 16px;
+    white-space: nowrap;
+}
+.but3 a{
+    font-weight: 600;
+    color: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: none;
+    border: none;
+    background: transparent;
+    color: #191b26;
+    padding: 0 16px;
+    white-space: nowrap;
+    text-decoration: none;
+}
+.buttons .but3:hover{
+    background: transparent;
+    background-color: #f7f7f7;
+    border-radius: 24px;
+    height: 50px;
+}
+.buttons2 .but3{
+    font-weight: 600;
+    color: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: none;
+    border: none;
+    background: transparent;
+    color: #191b26;
+    padding: 0 16px;
+    white-space: nowrap;
+
+}
+.buttons2 .but3 a{
+    text-decoration: none;
+    color: #191b26;
+}
+.buttons2 .but3:hover{
+    background: transparent;
+    background-color: #f7f7f7;
+    border-radius: 24px;
+    height: 60px;
+}
+
+.but4{
+    max-width: 150px;
+    height: 50px;
+    width: 100%;
+    border: 1px solid #ceced2;
+    background: transparent;
+    border-radius: 24px;
+    margin-left: 8px;
+    padding: 14px 20px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.but-relevant{
+    max-width: 150px;
+    height: 50px;
+    width: 100%;
+    border: 1px solid #ceced2;
+    background: transparent;
+    border-radius: 24px;
+    margin-left: 8px;
+    padding: 14px 20px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.but-relevant a{
+    color: black;
+    text-decoration: none;
+}
+.but4:hover{
+    border: 1px solid black;
+    transition: 0.5s;
+}
+.but-relevant:hover{
+    border: 1px solid black;
+    transition: 0.5s;
+}
+.buttons .but5{
+    font-weight: 600;
+    max-width: 500px;
+    height: 50px;
+    width: 100%;
+    border: 1px solid #ceced2;
+    background: transparent;
+    border-radius: 24px;
+    color: white;
+    background: #00ab6b;
+    border: none;
+    white-space: nowrap;
+    padding: 0 24px;
+    margin-left: 32px;
+}
+.buttons .but5 a{
+    text-decoration: none;
+    color: white;
+}
+.buttons .but5:hover{
+    background: #14bc7d;
+    color: #fff;
+}
+@media only screen and (max-width: 653px) {
+ .logo{
+        display: none;
+    }
+    .logo2{
+    display: block;
+    
+        
+    }
+    body button, input {
+    font-size: 14px;
+}
+
+}
+@media only screen and (max-width: 1138px) {
+ .buttons .but5{
+        display: none;
+    }
+}
+
+.but5 i{
+    font-weight: 600;
+     color: white;
+}
+/*@media only screen and (max-width: 887px) {
+ .search-box .but2{
+      display: none;
+ }
+
+}*/
+.but5 i{
+    font-size: 18px;
+}
+@media only screen and (max-width: 719px){
+    .search-box input{
+        font-size: 16px;
+        padding: 0 1px 0 35px;
+    }
+}
+@media only screen and (max-width: 677px){
+    .search-box .but2{
+        display: none;
+    }
+    .search-box{
+        padding: 0 47px 0 0;
+    }
+
+}
+@media only screen and (max-width: 515px){
+    .search-box input{
+        padding: 0 15px 0 35px;
+    }
+}
+
+@media only screen and (max-width: 764px){
+    .search-box{
+        padding: 0 68px 0 0;
+    }
+
+
+}
+@media only screen and (max-width: 532px){
+    .search-box{
+        display: none;
+    }
+}
+@media only screen and (max-width: 349px){
+    #but4{
+        display: none;
+    }
+}
+@media only screen and (max-width: 370px){
+    .but4{
+        display: none;
+    }
+}
+@media only screen and (max-width: 297px){
+    .buttons .but3{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 265px){
+    #but3{
+        display: none;
+    }
+}
+.profile-img{
+    display: flex;
+
+}
+.profile-img a{
+    position: relative;
+
+}
+.user1{
+    max-width: 100px;
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #656f79;
+    -o-object-fit: cover;
+    background-size: cover;
+    background: #fff;
+    border-radius: 50%;
+}
+.img-user1{
+    width: 48px;
+    height: 48px;
+}
+h5{
+    display: inline-block;
+
+}
+.info-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    margin-top: 30px;
+}
+.info-user{
+    display: flex;
+    align-items: center;
+}
+.info{
+    margin-left: 20px
+}
+/*.p{
+    flex: none;
+}*/
+h4{
+    font-weight: 500;
+    font-size: 14px;
+}
+.p{
+    font-size: 12px;
+    font-weight: 400;
+    color: #656f79;
+    white-space: nowrap;
+}
+.sub-button button{
+    background: transparent;
+    color: #656f79;
+    border: none;
+    display: flex;
+    align-items: center;
+    border-radius: 24px;
+    height: 40px;
+    padding: 0 16px;
+    margin-left: 10px;
+}
+.sub-button button:hover{
+    background: #EFEFEF;
+}
+.sub-button button i{
+    font-size: 20px;
+}
+.buttons-info{
+    max-width: 350px;
+    width: 100%;
+    white-space: nowrap;
+}
+.buttons-info .butt1{
+    text-align: center;
+    max-width: 70px;
+    height: 40px;
+    width: 100%;
+    border: 1px solid #ceced2;
+    background: transparent;
+    padding: 0 16px;
+    font-size: 14px;
+    white-space: nowrap;
+    border-radius: 8px;
+}
+.buttons-info .butt1:hover{
+    border: 1px solid black;
+}
+.buttons-info .butt1 i{
+    font-size: 14px;
+}
+.buttons-info .butt2{
+    text-align: center;
+    max-width: 40px;
+    height: 40px;
+    width: 100%;
+    border: 1px solid #ceced2;
+    background: transparent;
+    padding: 0 13px;
+    font-size: 14px;
+    white-space: nowrap;
+    border-radius: 8px;
+}
+.buttons-info .butt2:hover{
+    border: 1px solid black;
+}
+.buttons-info .butt3{
+    max-width: 40px;
+    height: 40px;
+    width: 100%;
+    border: 1px solid #ceced2;
+    background: transparent;
+    padding: 0 13px;
+    font-size: 15px;
+    white-space: nowrap;
+    border-radius: 8px;
+}
+.buttons-info .butt3:hover{
+    border: 1px solid black;
+}
+.buttons-info .butt4{
+    font-weight: 600;
+    max-width: 115px;
+    height: 50px;
+    width: 100%;
+    border: 1px solid #ceced2;
+    background: transparent;
+    border-radius: 24px;
+    color: white;
+    background: #00ab6b;
+    border: none;
+    white-space: nowrap;
+    padding: 0 24px;
+}
+.buttons-info .butt4:hover{
+    background: #14bc7d;
+    color: #fff;
+}
+.container2{
+    display: flex;
+    flex-direction: column;
+}
+.video-bar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+.vid1{
+    max-width: 600px;
+    width: 100%;
+    background-size: cover;
+}
+.description{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+    width: 100%;
+}
+.span2{
+    color: #14bc7d;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0 11px;
+    cursor: pointer;
+}
+.span2:hover{
+    background: #00C75147;
+    border-radius: 4px;
+
+}
+.span1{
+    color: #7D7D7D;
+    font-size: 14px;
+}
+.span1 i{
+    padding: 0 6px;
+}
+
+.butt5{
+    max-width: 40px;
+    height: 40px;
+    width: 100%;
+    border: 1px solid #ceced2;
+    background: transparent;
+    padding: 0 13px;
+    font-size: 15px;
+    white-space: nowrap;
+    border-radius: 8px;
+}
+.butt6{
+    max-width: 90px;
+    height: 40px;
+    width: 100%;
+    border: 1px solid #ceced2;
+    background: transparent;
+    padding: 0 13px;
+    font-size: 15px;
+    white-space: nowrap;
+    border-radius: 8px;
+    margin-left: 10px;
+}
+.buttons2{
+    max-width: 170px;
+    width: 100%;
+}
+.butt5:hover{
+    border: 1px solid black;
+}
+.butt6:hover{
+    border: 1px solid black;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+@media only screen and (max-width: 619px){
+    .butt3{
+        display: none;
+    }
+}
+@media only screen and (max-width: 572px){
+    .butt2{
+        display: none;
+    }
+}
+@media only screen and (max-width: 528px){
+    .butt1{
+        display: none;
+    }
+}
+@media only screen and (max-width: 454px){
+    .sub-button button{
+        display: none;
+    }
+}
+@media only screen and (max-width: 324px){
+    .info{
+        display: none;
+    }
+}
+@media only screen and (max-width: 207px){
+    .butt4{
+        display: none;
+    }
+}
+@media only screen and (max-width: 407px){
+    .butt5{
+        display: none;
+    }
+}
+@media only screen and (max-width: 357px){
+    .span2{
+        padding: 0;
+    }
+}
+@media only screen and (max-width: 200px){
+    .butt6{
+        display: none;
+    }
+}
+</style>
+</head>
+<section class="banner">
+        <div class="container">
+            <div class="nav-bar">
+                 <a href="index.html"><img src="img-index/logo.png" alt="logo" class="logo"></a>
+                 <a href="index.html"><img src="img-index/Pixabay-logo-new.svg.png" alt="logo" class="logo2"></a>
+                 <div class="search-box">
+                    <form action="https://pixabay.com/ru/">
+                        <button class="but1"><i class='bx bx-search'></i></button>
+                        <input type="text" placeholder="Search" class="search">
+                        <button class="but2" href="https://pixabay.com/ru/videos/">Videos</button>
+                    </form>
+                 </div>
+                 <div class="buttons">
+                     <button class="but3"><a href="https://pixabay.com/ru/popular-searches/">Explore</a></button>
+                     <button class="but3">Log in</button>
+                     <a href="https://pixabay.com/ru/videos/search/website/" target="_blank"><button class="but4">Join</button></a>
+                     
+                     <button class="but5">
+                        <a href="https://pixabay.com/ru/videos/search/website/">
+                        <i class='bx bx-upload'></i>
+                        <span>Upload photos</span>
+                        </a>
+                     </button>
+                 
+                 </div>
+            </div>
+        </div>
+        <hr>
+        
+        <div class="info-bar">
+            <div class="info-user">
+            <div class="profile-img">
+                <a href="https://pixabay.com/ru/users/azizphone-13817766/" target="_blank" class="img-user1">
+                    <img src="img-index3/15-47-35-888_96x96.webp" alt="profile photo" class="user1">    
+                </a>
+            </div>
+            <div class="info">
+            <h4>azizphone</h4>
+            <p class="p">300 subscribers</p>
+            </div>
+            <div class="sub-button">
+                <a href="https://pixabay.com/ru/users/piro4d-2707530" target="_blank"><button class="button"><i class='bx bxs-user-plus' id="i1"></i>Subscribe</button></a>
+            </div>
+            </div>
+            <div class="info-buttons">
+            <div class="buttons-info">
+                <button class="butt1"><i class='bx bx-heart'></i><span>158</span></button>
+                <button class="butt2"><i class='bx bx-comment'></i></button>
+                <button class="butt3"><i class='bx bx-message-alt-add'></i></button>
+                <a href="https://player.vimeo.com/external/436375789.sd.mp4?s=a5f19d627bbf279bf01f12e7ca4f14d847ee30c5&profile_id=164&oauth2_token_id=57447761" target="_blank"><button class="butt4">Download</button></a>
+            </div>
+        </div>
+        </div>
+        <div class="container2">
+            <div class="video-bar">
+                <video autoplay loop controls src="img-index3/1902883782.mp4" class="vid1"></video>
+            </div>
+            <div class="description">
+            <div class="title">
+                <span class="span1"><i class='bx bx-check'></i>Video (Website). For free.</span>
+                <span class="span2">Content license</span>
+            </div>
+            <div class="buttons2">
+                <button class="butt5"><i class='bx bx-share-alt'></i></button>
+                <button class="butt6"><i class='bx bxs-info-circle'></i>Details</button>
+            </div>
+            </div>
+        </div>
+</section>
+</body>
+</html>
